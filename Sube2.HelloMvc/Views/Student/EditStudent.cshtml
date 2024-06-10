@@ -1,19 +1,34 @@
-﻿@model Ogrenci
+﻿@model Sube2.HelloMvc.Models.Ogrenci
 @{
-    ViewData["Title"] = "EditStudent";
+    ViewBag.Title = "Öğrenci Düzenle";
 }
 
-<h1>Edit Student</h1>
+<div class="container d-flex justify-content-center my-5">
+    <div class="card shadow-sm" style="width: 50%; background-color: #e3f2;">
+        <div class="card-body">
+            <h2 class="card-title text-center">Öğrenci Düzenleme İşlemi</h2>
+            <form asp-action="EditStudent" asp-controller="Student" method="post">
+                <div class="form-group mb-3">
+                    <label for="Ad">Ad</label>
+                    <input asp-for="Ad" class="form-control" id="Ad" placeholder="Adınızı girin" />
+                </div>
 
-<form asp-action="EditStudent" asp-controller="Student" method="post">
-    <label asp-for="Ad"></label>
-    <input asp-for="Ad" />
-    <label>Soyad:</label>
-    <input asp-for="Soyad" />
-    <label>Numara</label>
-    <input asp-for="Numara" />
-    <input asp-for="Ogrenciid" type="hidden" />
-    <input type="submit" value="Kaydet" />
-</form>
+                <div class="form-group mb-3">
+                    <label for="Soyad">Soyad</label>
+                    <input asp-for="Soyad" class="form-control" id="Soyad" placeholder="Soyadınızı girin" />
+                </div>
 
+                <div class="form-group mb-3">
+                    <label for="Numara">Numara</label>
+                    <input asp-for="Numara" class="form-control" id="Numara" placeholder="Numaranızı girin" />
+                </div>
 
+                <input asp-for="Ogrenciid" type="hidden" />
+
+                <div class="form-group text-center mt-4">
+                    <button type="submit" class="btn btn-danger">Kaydet</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

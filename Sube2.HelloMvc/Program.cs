@@ -1,3 +1,6 @@
+using Microsoft.EntityFrameworkCore;
+using Sube2.HelloMvc.Models;
+
 namespace Sube2.HelloMvc
 {
     public class Program

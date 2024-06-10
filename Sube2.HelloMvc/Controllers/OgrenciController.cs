@@ -1,59 +1,62 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Sube2.HelloMvc.Models;
-using Sube2.HelloMvc.Models.ViewModels;
 
 namespace Sube2.HelloMvc.Controllers
 {
     public class OgrenciController : Controller
     {
-        public ViewResult Index()//Action
+        public ViewResult Index()  //Action
         {
-
-
             return View();
         }
 
         public ViewResult OgrenciDetay(int id)
         {
-            var d = new Ders { Dersad = "Matematik", Dersid = 1, Kredi = 3 };
-            var ogrt = new Ogretmen { Ad = "Ahmet", Soyad = "Mehmet", Bolum = "Bilgisayar" };
+            //Ogretmen ogrt = null;
+            //Models.Ogrenci ogr = null;
+            //Ders ds = null;
+            //if (id == 1) 
+            //{
+            //    ogr= new Models.Ogrenci();
+            //    ogr.Ad = "Ali";
+            //    ogr.Soyad = "Veli";
+            //    ogr.Numara = 123;
 
+            //    ogrt = new Ogretmen();
+            //    ogrt.Ad = "Mehmet";
+            //    ogrt.Soyad = "Ahmet";
+            //    ogrt.OgretmenId = 123;
 
-            Ogrenci ogr = null;
-            if (id == 1)
-            {
-                ogr = new Ogrenci();
-                ogr.Ad = "Ali";
-                ogr.Soyad = "Veli";
-                ogr.Numara = 123;
-            }
-            else if (id == 2)
-            {
-                ogr = new Ogrenci { Ad = "Ahmet", Soyad = "Mehmet", Numara = 456 };
-            }
-            ViewData["ogrenci"] = ogr;
-            ViewBag.student = ogr;
+            //    ds = new Ders();
+            //    ds.kredi = 5;
+            //    ds.DersId = 1;
+            //    ds.DersAd = "Programlama";
+            //}
+            //else if (id == 2) 
+            //{
+            //    ogr = new Models.Ogrenci { Ad = "Ali", Soyad = "Veli", Numara = 123 };
+            //}
 
-            var ogrvm = new OgrViewModel { Ders = d, Ogretmen = ogrt, Ogrenci = ogr };
+            ////var model = Tuple.Create(ogr, ogrt);
 
-            return View(ogrvm);
+            //ViewData["school"] = ogr;
+            //ViewBag.student = ogr;
+            //ViewBag.ogretmen = ogrt;
+
+            //OkulViewModels vm = new OkulViewModels();
+            //vm.ogretmen = ogrt;
+            //vm.ogrenci = ogr;
+            //vm.ders = ds;
+            return View();
         }
 
         public ViewResult OgrenciListe()
         {
-            var lst = new List<Ogrenci> {
-            new Ogrenci { Ad = "Ali", Soyad = "Veli", Numara = 123 },
-            new Ogrenci { Ad = "Ahmet", Soyad = "Mehmet", Numara = 456 }
-            };
+            
 
-            return View(lst);
+            return View();
         }
+
+
+
     }
 }
-
-//Controller->View veri taşıma
-//ViewData:Bir koleksiyon yapısıdır. ViewData bir dictionary yapısıdır. Anahtar ve değer çiftlerinden oluşur.
-
-//ViewBag: Arka planda ViewData koleksiyonunu kullanan,dynamic yapıda bir veri taşıma yapısıdır.
-
-//ViewModel

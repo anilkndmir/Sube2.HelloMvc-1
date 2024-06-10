@@ -2,6 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Sube2.HelloMvc.Models;
 
@@ -10,9 +11,11 @@ using Sube2.HelloMvc.Models;
 namespace Sube2.HelloMvc.Migrations
 {
     [DbContext(typeof(OkulDBContext))]
-    partial class OkulDBContextModelSnapshot : ModelSnapshot
+    [Migration("20240610080949_InitDb")]
+    partial class InitDb
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
